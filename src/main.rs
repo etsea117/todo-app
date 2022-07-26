@@ -12,7 +12,7 @@ use rocket::{
     form::Form,
     fs::{relative, FileServer},
     http::{Cookie, CookieJar, Status},
-    request::{self, FlashMessage, FromRequest, Outcome},
+    request::{self, FlashMessage, FromRequest},
     response::{self, Flash, Redirect, Responder},
     serde::json::Json,
     Build, Request, Rocket,

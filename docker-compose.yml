@@ -1,22 +1,7 @@
 version: '3.1'
 
 services:
-  web:
-    container_name: "todo_server"
-    depends_on:
-      - db
-    build: .
-    ports:
-      - "8000:8000"
-    volumes:
-      - .:/todo-app
-    environment:
-      - DATABASE_URL=postgres://postgres:password@db:5432/todo
-    networks:
-      - back-tier
-    links:
-      - db
-
+  
   db:
     image: postgres
     restart: always
@@ -26,9 +11,3 @@ services:
       POSTGRES_DB: "todo"
     ports:
       - "5432:5432"
-    networks:
-      - back-tier
-
-networks:
-  front-tier: {}
-  back-tier: {}
